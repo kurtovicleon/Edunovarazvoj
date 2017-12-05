@@ -44,8 +44,6 @@ grupa int not null,
 polaznik int not null
 );
 
-
-
 alter table grupa add foreign key (smjer) references smjer(sifra);
 alter table grupa add foreign key (predavac) references predavac(sifra);
 
@@ -54,8 +52,7 @@ alter table predavac add foreign key (osoba) references osoba(oib);
 alter table polaznik add foreign key (osoba) references osoba(oib);
 
 alter table clan add foreign key (grupa) references grupa(sifra);
-alter table clan add foreign key (polaznik) references polaznik(sifra);
-
+alter table clan add foreign key (polaznik) references polaznik(sifra); 
 insert into smjer(sifra,naziv,cijena,upisnina,brojsati) values 
 (null,'PHP programiranje',5000.99,500,130),
 (null,'Java programiranje',3000.99,200,130),
@@ -117,10 +114,6 @@ insert into polaznik (osoba,brojugovora) values
 
 insert into clan(grupa,polaznik) values 
 (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11), (1,12), (1,13), (1,14), (1,15), (1,16), (1,17), (1,18), (1,19), (1,20),(1,11),(2,1),(2,21); 
-
-
-
-
 
 
 
